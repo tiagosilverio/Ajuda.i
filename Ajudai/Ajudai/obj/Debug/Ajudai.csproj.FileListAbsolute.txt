@@ -1,0 +1,13 @@
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\Ajudai.exe.config
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\Ajudai.exe
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\Ajudai.pdb
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csprojAssemblyReference.cache
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.frmLogin.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Properties.Resources.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.GenerateResource.cache
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.CoreCompileInputs.cache
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.exe
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.pdb
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroUsuario.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioAdm.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioTec.resources
