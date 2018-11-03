@@ -23,5 +23,27 @@ namespace Ajudai.Apresentacao
             cad.ShowDialog();
         }
 
+        private void tsmLogoffAdm_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Close();
+            login.ShowDialog();            
+        }
+
+        private void tsmFecharAdm_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pesquisarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPesquisar pesquisar = new frmPesquisar();
+            pesquisar.ShowDialog();
+        }
+
+        private void frmInicioAdm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

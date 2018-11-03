@@ -33,7 +33,7 @@ namespace Ajudai
                 nivelAcesso = "T";
             }
 
-            List<String> dadosLogin = new List<String>();
+            List<String> dadosLogin = new List<String>(); // Coleta os dados digitados para fazer acesso ao sistema.
             dadosLogin.Add("0");
             dadosLogin.Add(txbUsuario.Text);
             dadosLogin.Add(txbSenha.Text);
@@ -43,29 +43,31 @@ namespace Ajudai
 
             if (controle.mensagem.Equals(""))
             {
-                if (controle.acessoAdmin)
-                {
-                    //MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmInicioAdm inicioAdm = new frmInicioAdm();
-                    inicioAdm.Show();                    
+                if (controle.acessoAdmin) // Verifica se é administrador e acessa a tela de administrador.
+                {                   
+                    frmInicioAdm inicioAdm = new frmInicioAdm();                    
+                    inicioAdm.Show();
+                    this.Hide();
+                    txbUsuario.Clear();
+                    txbSenha.Clear();
                 }
-                else if (controle.acessoTecn)
-                {
-                    //MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (controle.acessoTecn) // Verifica se é técnico e acessa a tela de técnico.
+                {                    
                     frmInicioTec inicioTec = new frmInicioTec();
-                    inicioTec.Show();                    
+                    inicioTec.Show();
+                    this.Hide();
+                    txbUsuario.Clear();
+                    txbSenha.Clear();
                 }
-                else
+                else // Mensagem de erro de acesso pelos dados verificados.
                 {
                     MessageBox.Show("Dados incorretos. Verifique ou contate seu administrador.", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-                
+                }        
             }
-            else
+            else // Mensagem de erro de acesso pelos dados digitados.
             {
                 MessageBox.Show(controle.mensagem, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            }                      
         }
 
         private void btnSair_Click(object sender, EventArgs e)

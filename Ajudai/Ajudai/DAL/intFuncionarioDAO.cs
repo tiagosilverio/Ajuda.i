@@ -13,8 +13,8 @@ namespace Ajudai.DAL
         bool Acessar(Funcionario funcionario);
         void EditarFuncionario(Funcionario funcionario);
         void ExcluirFuncionario(Funcionario funcionario);
-        Funcionario PesquisarFuncionarioPorID(Funcionario funcionario);
-        Funcionario PesquisarFuncionarioPorNivel(Funcionario funcionario);
+        Funcionario PesquisarFuncionarioPorId(Funcionario funcionario);
+        Funcionario PesquisarFuncionarioPorNomeUsuario(Funcionario funcionario);
         List<Funcionario> PesquisarFuncionarioPorNome(Funcionario funcionario);
     }
 }

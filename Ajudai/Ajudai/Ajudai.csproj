@@ -10,6 +10,21 @@
     <AssemblyName>Ajudai</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -29,6 +44,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,6 +75,12 @@
     <Compile Include="Apresentacao\frmInicioTec.Designer.cs">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmListaFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmListaFuncionarios.Designer.cs">
+      <DependentUpon>frmListaFuncionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,9 +93,16 @@
     <Compile Include="Apresentacao\frmInicioAdm.Designer.cs">
       <DependentUpon>frmInicioAdm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmPesquisar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmPesquisar.Designer.cs">
+      <DependentUpon>frmPesquisar.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
     <Compile Include="DAL\intFuncionarioDAO.cs" />
+    <Compile Include="Modelo\atbEstaticos.cs" />
     <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Modelo\Criptografia.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
@@ -86,8 +118,14 @@
     <EmbeddedResource Include="Apresentacao\frmInicioTec.resx">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmListaFuncionarios.resx">
+      <DependentUpon>frmListaFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmPesquisar.resx">
+      <DependentUpon>frmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

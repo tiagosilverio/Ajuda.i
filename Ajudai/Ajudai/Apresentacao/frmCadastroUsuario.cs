@@ -19,7 +19,7 @@ namespace Ajudai.Apresentacao
         }      
 
         private void btnCadastrar_Click(object sender, EventArgs e)
-        {
+        {             
             String nivelAcesso = "";
             if (rdbAdministrador.Checked)
             {
@@ -31,20 +31,30 @@ namespace Ajudai.Apresentacao
                 nivelAcesso = "T";
             }
 
-            List<String> dadosFuncionario = new List<string>();
+            List<String> dadosFuncionario = new List<String>();
             dadosFuncionario.Add("0");
             dadosFuncionario.Add(txbUsuario.Text);
             dadosFuncionario.Add(txbSenha.Text);
             dadosFuncionario.Add(txbConfirmar.Text);
             dadosFuncionario.Add(txbNome.Text);
             dadosFuncionario.Add(txbEmail.Text);
-            dadosFuncionario.Add(txbTelefone.Text);
-            dadosFuncionario.Add(txbCelular.Text);
+            dadosFuncionario.Add(mskTelefone.Text);
+            dadosFuncionario.Add(mskCelular.Text);
             dadosFuncionario.Add(nivelAcesso);
             dadosFuncionario.Add(txbNomeExibicao.Text);
+
             Controle controle = new Controle();
-            controle.CadastrarFuncionario(dadosFuncionario);
-            MessageBox.Show(controle.mensagem, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            controle.CadastrarFuncionario(dadosFuncionario);            
+            MessageBox.Show(controle.mensagem, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);            
+            
+            /*txbUsuario.Text = "";
+            txbSenha.Text = "";
+            txbConfirmar.Text = "";
+            txbNome.Text = "";
+            txbEmail.Text = "";
+            mskTelefone.Text = "";
+            mskCelular.Text = "";
+            txbNomeExibicao.Text = "";*/
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -8,7 +8,7 @@ namespace Ajudai.Modelo
 {
     public class Funcionario
     {
-        public int IdFuncionario { get; set; }
+        public int Id { get; set; }
         public String Usuario { get; set; }
         public String Senha { get; set; }
         public String Confirmar { get; set; }

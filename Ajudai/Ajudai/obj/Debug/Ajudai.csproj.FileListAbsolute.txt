@@ -11,3 +11,4 @@ C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.pdb
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroUsuario.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioAdm.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioTec.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisar.resources

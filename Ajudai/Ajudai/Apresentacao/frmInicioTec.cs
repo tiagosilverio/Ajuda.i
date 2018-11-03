@@ -16,5 +16,17 @@ namespace Ajudai.Apresentacao
         {
             InitializeComponent();
         }
+
+        private void tsmLogoffTec_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Close();
+            login.ShowDialog();
+        }
+
+        private void tsmFecharTec_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

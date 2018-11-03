@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,9 +35,7 @@
             this.rdbAdministrador = new System.Windows.Forms.RadioButton();
             this.txbNomeExibicao = new System.Windows.Forms.TextBox();
             this.lblNomeExibicao = new System.Windows.Forms.Label();
-            this.txbCelular = new System.Windows.Forms.TextBox();
             this.lblCelular = new System.Windows.Forms.Label();
-            this.txbTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -51,15 +48,11 @@
             this.lblCamposObrigatorios = new System.Windows.Forms.Label();
             this.lblCampos = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mskCelular = new System.Windows.Forms.MaskedTextBox();
+            this.txbEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txbEmail
-            // 
-            this.txbEmail.Location = new System.Drawing.Point(41, 190);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(367, 20);
-            this.txbEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
@@ -72,10 +65,10 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(41, 363);
+            this.btnCadastrar.Location = new System.Drawing.Point(41, 419);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 11;
+            this.btnCadastrar.TabIndex = 10;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -84,20 +77,20 @@
             // 
             this.groupBox1.Controls.Add(this.rdbTecnico);
             this.groupBox1.Controls.Add(this.rdbAdministrador);
-            this.groupBox1.Location = new System.Drawing.Point(197, 272);
+            this.groupBox1.Location = new System.Drawing.Point(70, 277);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 56);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(230, 56);
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nível de Acesso*";
             // 
             // rdbTecnico
             // 
             this.rdbTecnico.AutoSize = true;
-            this.rdbTecnico.Location = new System.Drawing.Point(141, 20);
+            this.rdbTecnico.Location = new System.Drawing.Point(160, 19);
             this.rdbTecnico.Name = "rdbTecnico";
             this.rdbTecnico.Size = new System.Drawing.Size(64, 17);
-            this.rdbTecnico.TabIndex = 10;
+            this.rdbTecnico.TabIndex = 0;
             this.rdbTecnico.TabStop = true;
             this.rdbTecnico.Text = "Técnico";
             this.rdbTecnico.UseVisualStyleBackColor = true;
@@ -108,54 +101,40 @@
             this.rdbAdministrador.Location = new System.Drawing.Point(7, 20);
             this.rdbAdministrador.Name = "rdbAdministrador";
             this.rdbAdministrador.Size = new System.Drawing.Size(88, 17);
-            this.rdbAdministrador.TabIndex = 9;
+            this.rdbAdministrador.TabIndex = 0;
             this.rdbAdministrador.TabStop = true;
             this.rdbAdministrador.Text = "Administrador";
             this.rdbAdministrador.UseVisualStyleBackColor = true;
             // 
             // txbNomeExibicao
             // 
-            this.txbNomeExibicao.Location = new System.Drawing.Point(41, 299);
+            this.txbNomeExibicao.Location = new System.Drawing.Point(93, 363);
             this.txbNomeExibicao.Name = "txbNomeExibicao";
-            this.txbNomeExibicao.Size = new System.Drawing.Size(144, 20);
+            this.txbNomeExibicao.Size = new System.Drawing.Size(178, 20);
             this.txbNomeExibicao.TabIndex = 8;
             // 
             // lblNomeExibicao
             // 
             this.lblNomeExibicao.AutoSize = true;
-            this.lblNomeExibicao.Location = new System.Drawing.Point(38, 282);
+            this.lblNomeExibicao.Location = new System.Drawing.Point(90, 347);
             this.lblNomeExibicao.Name = "lblNomeExibicao";
             this.lblNomeExibicao.Size = new System.Drawing.Size(93, 13);
             this.lblNomeExibicao.TabIndex = 0;
             this.lblNomeExibicao.Text = "Nome de Exibição";
             // 
-            // txbCelular
-            // 
-            this.txbCelular.Location = new System.Drawing.Point(231, 240);
-            this.txbCelular.Name = "txbCelular";
-            this.txbCelular.Size = new System.Drawing.Size(177, 20);
-            this.txbCelular.TabIndex = 7;
-            // 
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(228, 223);
+            this.lblCelular.Location = new System.Drawing.Point(182, 223);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(39, 13);
             this.lblCelular.TabIndex = 0;
             this.lblCelular.Text = "Celular";
             // 
-            // txbTelefone
-            // 
-            this.txbTelefone.Location = new System.Drawing.Point(41, 240);
-            this.txbTelefone.Name = "txbTelefone";
-            this.txbTelefone.Size = new System.Drawing.Size(177, 20);
-            this.txbTelefone.TabIndex = 6;
-            // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(38, 223);
+            this.lblTelefone.Location = new System.Drawing.Point(90, 223);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 0;
@@ -165,7 +144,7 @@
             // 
             this.txbNome.Location = new System.Drawing.Point(41, 142);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(367, 20);
+            this.txbNome.Size = new System.Drawing.Size(282, 20);
             this.txbNome.TabIndex = 4;
             // 
             // lblNome
@@ -179,15 +158,16 @@
             // 
             // txbConfirmar
             // 
-            this.txbConfirmar.Location = new System.Drawing.Point(231, 94);
+            this.txbConfirmar.Location = new System.Drawing.Point(185, 94);
             this.txbConfirmar.Name = "txbConfirmar";
-            this.txbConfirmar.Size = new System.Drawing.Size(177, 20);
+            this.txbConfirmar.PasswordChar = '*';
+            this.txbConfirmar.Size = new System.Drawing.Size(138, 20);
             this.txbConfirmar.TabIndex = 3;
             // 
             // lblConfirmar
             // 
             this.lblConfirmar.AutoSize = true;
-            this.lblConfirmar.Location = new System.Drawing.Point(228, 77);
+            this.lblConfirmar.Location = new System.Drawing.Point(182, 77);
             this.lblConfirmar.Name = "lblConfirmar";
             this.lblConfirmar.Size = new System.Drawing.Size(89, 13);
             this.lblConfirmar.TabIndex = 0;
@@ -197,7 +177,8 @@
             // 
             this.txbSenha.Location = new System.Drawing.Point(41, 94);
             this.txbSenha.Name = "txbSenha";
-            this.txbSenha.Size = new System.Drawing.Size(177, 20);
+            this.txbSenha.PasswordChar = '*';
+            this.txbSenha.Size = new System.Drawing.Size(138, 20);
             this.txbSenha.TabIndex = 2;
             // 
             // lblSenha
@@ -211,9 +192,9 @@
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(41, 44);
+            this.txbUsuario.Location = new System.Drawing.Point(41, 43);
             this.txbUsuario.Name = "txbUsuario";
-            this.txbUsuario.Size = new System.Drawing.Size(177, 20);
+            this.txbUsuario.Size = new System.Drawing.Size(138, 20);
             this.txbUsuario.TabIndex = 1;
             // 
             // lblUsuario
@@ -236,7 +217,7 @@
             // lblCampos
             // 
             this.lblCampos.AutoSize = true;
-            this.lblCampos.Location = new System.Drawing.Point(285, 27);
+            this.lblCampos.Location = new System.Drawing.Point(226, 9);
             this.lblCampos.Name = "lblCampos";
             this.lblCampos.Size = new System.Drawing.Size(123, 13);
             this.lblCampos.TabIndex = 0;
@@ -244,20 +225,48 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(333, 363);
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(248, 419);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 37;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(93, 240);
+            this.mskTelefone.Mask = "(99)0000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(86, 20);
+            this.mskTelefone.TabIndex = 6;
+            // 
+            // mskCelular
+            // 
+            this.mskCelular.Location = new System.Drawing.Point(185, 240);
+            this.mskCelular.Mask = "(99)00000-0000";
+            this.mskCelular.Name = "mskCelular";
+            this.mskCelular.Size = new System.Drawing.Size(86, 20);
+            this.mskCelular.TabIndex = 7;
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Location = new System.Drawing.Point(41, 190);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(282, 20);
+            this.txbEmail.TabIndex = 5;
+            // 
             // frmCadastroUsuario
             // 
+            this.AcceptButton = this.btnCadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(454, 422);
+            this.CancelButton = this.btnCancelar;
+            this.ClientSize = new System.Drawing.Size(368, 464);
+            this.Controls.Add(this.mskCelular);
+            this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblCampos);
             this.Controls.Add(this.lblCamposObrigatorios);
@@ -267,9 +276,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txbNomeExibicao);
             this.Controls.Add(this.lblNomeExibicao);
-            this.Controls.Add(this.txbCelular);
             this.Controls.Add(this.lblCelular);
-            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txbNome);
             this.Controls.Add(this.lblNome);
@@ -291,8 +298,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -300,9 +305,7 @@
         private System.Windows.Forms.RadioButton rdbAdministrador;
         private System.Windows.Forms.TextBox txbNomeExibicao;
         private System.Windows.Forms.Label lblNomeExibicao;
-        private System.Windows.Forms.TextBox txbCelular;
         private System.Windows.Forms.Label lblCelular;
-        private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
@@ -315,5 +318,8 @@
         private System.Windows.Forms.Label lblCamposObrigatorios;
         private System.Windows.Forms.Label lblCampos;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.MaskedTextBox mskCelular;
+        private System.Windows.Forms.TextBox txbEmail;
     }
 }

@@ -40,11 +40,11 @@ namespace Ajudai.DAL
                 cmd.Connection = conexaoBD.Conectar();
                 cmd.ExecuteNonQuery();
                 conexaoBD.Desconectar();
-                this.mensagem = "Cadastrado com Sucesso!";
+                this.mensagem = "Cadastrado com Sucesso!";            
             }
-            catch (SqlException )
+            catch (SqlException)
             {
-                this.mensagem = "Nome de usuário indisponível";
+                this.mensagem = "Nome de Usuário Indisponível";
             }
         }
 
@@ -92,27 +92,160 @@ namespace Ajudai.DAL
 
         public void EditarFuncionario(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"update Funcionario set FuncionarioLogin = @usuario, Nome = @nome, 
+                            Email = @email, Telefone = @telefone, Celular = @celular, 
+                            NivelAcesso = @nivelAcesso, NomeExibicao = @nomeExibicao 
+                            where idFuncionario = @id";
+            cmd.Parameters.AddWithValue("@id", funcionario.Id);
+            cmd.Parameters.AddWithValue("@usuario", funcionario.Usuario);            
+            cmd.Parameters.AddWithValue("@nome", funcionario.Nome);
+            cmd.Parameters.AddWithValue("@email", funcionario.Email);
+            cmd.Parameters.AddWithValue("@telefone", funcionario.Telefone);
+            cmd.Parameters.AddWithValue("@celular", funcionario.Celular);
+            cmd.Parameters.AddWithValue("@nivelAcesso", funcionario.NivelAcesso);
+            cmd.Parameters.AddWithValue("@nomeExibicao", funcionario.NomeExibicao);
+
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar();
+                this.mensagem = "Editado com Sucesso!";
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "Nome de Usuário Indisponível";
+            }
         }
 
         public void ExcluirFuncionario(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "delete from funcionario where idFuncionario = @id";
+            cmd.Parameters.AddWithValue("@id", funcionario.Id);
+
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar();
+                this.mensagem = "Usuário excluído com sucesso!";
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
         }
 
-        public Funcionario PesquisarFuncionarioPorID(Funcionario funcionario)
+        public Funcionario PesquisarFuncionarioPorId(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"select * from Funcionario
+                            where idFuncionario = @id";
+            cmd.Parameters.AddWithValue("@id", funcionario.Id);
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                dataReader = cmd.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    funcionario.Usuario = dataReader["FuncionarioLogin"].ToString();                    
+                    funcionario.Nome = dataReader["Nome"].ToString();
+                    funcionario.Email = dataReader["Email"].ToString();
+                    funcionario.Telefone = dataReader["Telefone"].ToString();
+                    funcionario.Celular = dataReader["Celular"].ToString();
+                    funcionario.NivelAcesso = dataReader["NivelAcesso"].ToString();
+                    funcionario.NomeExibicao = dataReader["NomeExibicao"].ToString();
+                }
+                else
+                {
+                    funcionario.Id = 0;
+                }
+                dataReader.Close();
+                conexaoBD.Desconectar();
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
+            return funcionario;
         }
 
-        public Funcionario PesquisarFuncionarioPorNivel(Funcionario funcionario)
+        public Funcionario PesquisarFuncionarioPorNomeUsuario(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"select * from Funcionario
+                            where FuncionarioLogin = @usuario";
+            cmd.Parameters.AddWithValue("@usuario", funcionario.Usuario);
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                dataReader = cmd.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    funcionario.Id = Convert.ToInt32(dataReader["idFuncionario"].ToString());
+                    funcionario.Usuario = dataReader["FuncionarioLogin"].ToString();
+                    funcionario.Nome = dataReader["Nome"].ToString();
+                    funcionario.Email = dataReader["Email"].ToString();
+                    funcionario.Telefone = dataReader["Telefone"].ToString();
+                    funcionario.Celular = dataReader["Celular"].ToString();
+                    funcionario.NivelAcesso = dataReader["NivelAcesso"].ToString();
+                    funcionario.NomeExibicao = dataReader["NomeExibicao"].ToString();
+                }
+                else
+                {
+                    funcionario.Usuario = null;
+                }
+                dataReader.Close();
+                conexaoBD.Desconectar();
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
+            return funcionario;
         }
 
         public List<Funcionario> PesquisarFuncionarioPorNome(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
+            List<Funcionario> listaFuncionarios = new List<Funcionario>();
+            cmd.CommandText = @"select * from Funcionario
+                            where Nome like @nome";
+            cmd.Parameters.AddWithValue("@nome", funcionario.Nome + "%");
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Funcionario listaUsuario = new Funcionario();
+                    listaUsuario.Id = Convert.ToInt32(dataReader["idFuncionario"].ToString());
+                    listaUsuario.Usuario = dataReader["FuncionarioLogin"].ToString();
+                    listaUsuario.Nome = dataReader["Nome"].ToString();
+                    listaUsuario.Email = dataReader["Email"].ToString();
+                    listaUsuario.Telefone = dataReader["Telefone"].ToString();
+                    listaUsuario.Celular = dataReader["Celular"].ToString();
+                    listaUsuario.NivelAcesso = dataReader["NivelAcesso"].ToString();
+                    listaUsuario.NomeExibicao = dataReader["NomeExibicao"].ToString();
+                    listaFuncionarios.Add(listaUsuario);
+                }
+                dataReader.Close();
+                conexaoBD.Desconectar();
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
+            return listaFuncionarios;
         }
     }
 }
