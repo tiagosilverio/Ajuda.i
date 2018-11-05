@@ -15,7 +15,9 @@ namespace Ajudai.DAL
         {
             conexaoBD = new SqlConnection();
             conexaoBD.ConnectionString = @"Data Source=HUSTIAN\SQLEXPRESS;
-                               Initial Catalog=AJUDA_I;Integrated Security=True";
+                             Initial Catalog=AJUDA_I;Integrated Security=True";
+            //conexaoBD.ConnectionString = @"Data Source=pim2018.mysql.dbaas.com.br;
+            //            Initial Catalog=pim2018;User ID=pim2018; Password=pim2018;Integrated Security=True";
         }
 
         public SqlConnection Conectar()

@@ -9,12 +9,12 @@ namespace Ajudai.DAL
 {
     interface intFuncionarioDAO
     {
-        void CadastrarFuncionario(Funcionario funcionario);
-        bool Acessar(Funcionario funcionario);
-        void EditarFuncionario(Funcionario funcionario);
-        void ExcluirFuncionario(Funcionario funcionario);
-        Funcionario PesquisarFuncionarioPorId(Funcionario funcionario);
-        Funcionario PesquisarFuncionarioPorNomeUsuario(Funcionario funcionario);
-        List<Funcionario> PesquisarFuncionarioPorNome(Funcionario funcionario);
+        void CadastrarFuncionario(ddFuncionario funcionario);
+        bool Acessar(ddFuncionario funcionario);
+        void EditarFuncionario(ddFuncionario funcionario);
+        void ExcluirFuncionario(ddFuncionario funcionario);
+        ddFuncionario PesquisarFuncionarioPorId(ddFuncionario funcionario);
+        ddFuncionario PesquisarFuncionarioPorNomeUsuario(ddFuncionario funcionario);
+        List<ddFuncionario> PesquisarFuncionarioPorNome(ddFuncionario funcionario);
     }
 }

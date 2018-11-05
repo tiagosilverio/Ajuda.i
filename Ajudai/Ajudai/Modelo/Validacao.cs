@@ -11,6 +11,7 @@ namespace Ajudai.Modelo
     {
         public String mensagem = "";
         public String usuario;
+        public String produto;
         public int id;
         
         public void ValidarCadastro(List<String> dadosFuncionario)
@@ -102,6 +103,24 @@ namespace Ajudai.Modelo
         {
             if (string.IsNullOrEmpty(dadosFuncionario[3]))
                 mensagem = "Insira o Nome. \n";
+        }
+
+        public void ValidarCadastroProduto(List<String> dadosProduto)
+        {
+
+        }
+
+        public void ValidarPesquisaProdutoPorId(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            try
+            {
+                this.id = Convert.ToInt32(dadosProduto[0]);
+            }
+            catch (FormatException e)
+            {
+                this.mensagem += "ID inválido";
+            }
         }
     }
 }

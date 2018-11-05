@@ -19,8 +19,8 @@ namespace Ajudai.Apresentacao
 
         private void cadastrarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastroUsuario cad = new frmCadastroUsuario();
-            cad.ShowDialog();
+            frmCadastroUsuario cadastroUsuario = new frmCadastroUsuario();
+            cadastroUsuario.ShowDialog();
         }
 
         private void tsmLogoffAdm_Click(object sender, EventArgs e)
@@ -37,13 +37,20 @@ namespace Ajudai.Apresentacao
 
         private void pesquisarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPesquisar pesquisar = new frmPesquisar();
+            frmPesquisarFuncionario pesquisar = new frmPesquisarFuncionario();
             pesquisar.ShowDialog();
         }
 
-        private void frmInicioAdm_Load(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmCadastroProduto cadastroProduto = new frmCadastroProduto();
+            cadastroProduto.ShowDialog();
+        }
 
+        private void pesquisarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmPesquisarProduto pesquisarProduto = new frmPesquisarProduto();
+            pesquisarProduto.ShowDialog();
         }
     }
 }

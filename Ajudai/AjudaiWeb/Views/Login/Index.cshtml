@@ -1,0 +1,23 @@
+﻿@using Ajudai.Modelo
+@model Cliente
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Index","Login", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x => x.id)
+        @Html.PasswordFor(x => x.senha)
+    <input type="submit" name="btnEntrar" value="Entrar" />
+    }
+    <a href="~/DadosCliente/Cadastro">Cadastrar</a>
+</body>
+</html>

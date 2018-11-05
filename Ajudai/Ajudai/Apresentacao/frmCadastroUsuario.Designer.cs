@@ -51,6 +51,7 @@
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.mskCelular = new System.Windows.Forms.MaskedTextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,6 +258,16 @@
             this.txbEmail.Size = new System.Drawing.Size(282, 20);
             this.txbEmail.TabIndex = 5;
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(144, 419);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 37;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmCadastroUsuario
             // 
             this.AcceptButton = this.btnCadastrar;
@@ -265,6 +276,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(368, 464);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.mskCelular);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.btnCancelar);
@@ -321,5 +333,6 @@
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.MaskedTextBox mskCelular;
         private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

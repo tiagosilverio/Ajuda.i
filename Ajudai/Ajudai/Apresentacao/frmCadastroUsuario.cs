@@ -46,20 +46,25 @@ namespace Ajudai.Apresentacao
             Controle controle = new Controle();
             controle.CadastrarFuncionario(dadosFuncionario);            
             MessageBox.Show(controle.mensagem, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);            
-            
-            /*txbUsuario.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txbUsuario.Text = "";
             txbSenha.Text = "";
             txbConfirmar.Text = "";
             txbNome.Text = "";
             txbEmail.Text = "";
             mskTelefone.Text = "";
             mskCelular.Text = "";
-            txbNomeExibicao.Text = "";*/
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            txbNomeExibicao.Text = "";
+            rdbAdministrador.Checked = false;
+            rdbTecnico.Checked = false;
         }
     }
 }

@@ -29,8 +29,8 @@ namespace Ajudai.Apresentacao
 
         private void grdLista_SelectionChanged(object sender, EventArgs e)
         {
-            Modelo.atbEstaticos.listaFuncionariosEstatico.Clear();
-            Modelo.atbEstaticos.listaFuncionariosEstatico.Add((Modelo.Funcionario)grdList);
+           // Modelo.atbEstaticos.listaFuncionariosEstatico.Clear();
+            //Modelo.atbEstaticos.listaFuncionariosEstatico.Add((Modelo.Funcionario));
         }
     }
 }

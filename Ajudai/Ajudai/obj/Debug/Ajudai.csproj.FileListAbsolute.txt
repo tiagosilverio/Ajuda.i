@@ -11,4 +11,12 @@ C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.pdb
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroUsuario.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioAdm.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioTec.resources
-C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisar.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaFuncionarios.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroProduto.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\EntityFramework.dll
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\EntityFramework.SqlServer.dll
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\EntityFramework.xml
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\EntityFramework.SqlServer.xml
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.CopyComplete
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisarFuncionario.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisarProduto.resources

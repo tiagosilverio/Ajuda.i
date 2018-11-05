@@ -11,7 +11,7 @@ namespace Ajudai.Modelo
         public bool acessoAdmin;
         public bool acessoTecn;
         public bool acesso = true;
-        public String mensagem = "";
+        public String mensagem;
 
         public void CadastrarFuncionario(List<String> dadosFuncionario)
         {
@@ -21,16 +21,16 @@ namespace Ajudai.Modelo
 
             if (validacao.mensagem.Equals(""))
             {
-                Funcionario funcionario = new Funcionario();
-                funcionario.Usuario = dadosFuncionario[1];
-                funcionario.Senha = dadosFuncionario[2];
-                funcionario.Confirmar = dadosFuncionario[3];
-                funcionario.Nome = dadosFuncionario[4];
-                funcionario.Email = dadosFuncionario[5];
-                funcionario.Telefone = dadosFuncionario[6];
-                funcionario.Celular = dadosFuncionario[7];
-                funcionario.NivelAcesso = dadosFuncionario[8];
-                funcionario.NomeExibicao = dadosFuncionario[9];
+                ddFuncionario funcionario = new ddFuncionario();
+                funcionario.usuario = dadosFuncionario[1];
+                funcionario.senha = dadosFuncionario[2];
+                funcionario.confirmar = dadosFuncionario[3];
+                funcionario.nome = dadosFuncionario[4];
+                funcionario.email = dadosFuncionario[5];
+                funcionario.telefone = dadosFuncionario[6];
+                funcionario.celular = dadosFuncionario[7];
+                funcionario.nivelAcesso = dadosFuncionario[8];
+                funcionario.nomeExibicao = dadosFuncionario[9];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionarioDAO.CadastrarFuncionario(funcionario);
                 this.mensagem = funcionarioDAO.mensagem;               
@@ -49,10 +49,10 @@ namespace Ajudai.Modelo
 
             if (validacao.mensagem.Equals(""))
             {
-                Funcionario funcionario = new Funcionario();
-                funcionario.Usuario = dadosLogin[1];
-                funcionario.Senha = dadosLogin[2];
-                funcionario.NivelAcesso = dadosLogin[3];
+                ddFuncionario funcionario = new ddFuncionario();
+                funcionario.usuario = dadosLogin[1];
+                funcionario.senha = dadosLogin[2];
+                funcionario.nivelAcesso = dadosLogin[3];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 acessoAdmin = funcionarioDAO.Acessar(funcionario);
                 this.acessoAdmin = funcionarioDAO.acessoAdm;
@@ -77,15 +77,15 @@ namespace Ajudai.Modelo
             return acesso;
         }
 
-        public Funcionario PesquisarFuncionarioPorId(List<String> dadosFuncionario)
+        public ddFuncionario PesquisarFuncionarioPorId(List<String> dadosFuncionario)
         {
             this.mensagem = "";
-            Funcionario funcionario = new Funcionario();
+            ddFuncionario funcionario = new ddFuncionario();
             Validacao validacao = new Validacao();
             validacao.ValidarPesquisaPorId(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
-                funcionario.Id = validacao.id;
+                funcionario.id = validacao.id;
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionario = funcionarioDAO.PesquisarFuncionarioPorId(funcionario);
             }
@@ -96,17 +96,17 @@ namespace Ajudai.Modelo
             return funcionario;
         }
 
-        public Funcionario PesquisarFuncionarioPorNomeUsuario(List<String> dadosFuncionario)
+        public ddFuncionario PesquisarFuncionarioPorNomeUsuario(List<String> dadosFuncionario)
         {
             this.mensagem = "";
-            Funcionario funcionario = new Funcionario();
+            ddFuncionario funcionario = new ddFuncionario();
             Validacao validacao = new Validacao();
             validacao.ValidarPesquisaPorNomeUsuario(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
-                funcionario.Usuario = dadosFuncionario[1];
+                funcionario.usuario = dadosFuncionario[1];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
-                funcionario = funcionarioDAO.PesquisarFuncionarioPorNomeUsuario(funcionario);
+                funcionario = funcionarioDAO.PesquisarFuncionarioPorNomeUsuario(funcionario);                
             }
             else
             {
@@ -123,15 +123,15 @@ namespace Ajudai.Modelo
 
             if (validacao.mensagem.Equals(""))
             {
-                Funcionario funcionario = new Funcionario();
-                funcionario.Id = validacao.id;
-                funcionario.Usuario = dadosFuncionario[1];                
-                funcionario.Nome = dadosFuncionario[2];
-                funcionario.Email = dadosFuncionario[3];
-                funcionario.Telefone = dadosFuncionario[4];
-                funcionario.Celular = dadosFuncionario[5];
-                funcionario.NivelAcesso = dadosFuncionario[6];
-                funcionario.NomeExibicao = dadosFuncionario[7];
+                ddFuncionario funcionario = new ddFuncionario();
+                funcionario.id = validacao.id;
+                funcionario.usuario = dadosFuncionario[1];                
+                funcionario.nome = dadosFuncionario[2];
+                funcionario.email = dadosFuncionario[3];
+                funcionario.telefone = dadosFuncionario[4];
+                funcionario.celular = dadosFuncionario[5];
+                funcionario.nivelAcesso = dadosFuncionario[6];
+                funcionario.nomeExibicao = dadosFuncionario[7];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionarioDAO.EditarFuncionario(funcionario);
                 this.mensagem = funcionarioDAO.mensagem;
@@ -149,10 +149,10 @@ namespace Ajudai.Modelo
             validacao.ValidarPesquisaPorId(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
-                Funcionario funcionario = new Funcionario();
-                funcionario.Id = validacao.id;
+                ddFuncionario funcionario = new ddFuncionario();
+                funcionario.id = validacao.id;
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
-                if (funcionarioDAO.PesquisarFuncionarioPorId(funcionario).Usuario != null)
+                if (funcionarioDAO.PesquisarFuncionarioPorId(funcionario).usuario != null)
                 {
                     funcionarioDAO.ExcluirFuncionario(funcionario);
                     this.mensagem = funcionarioDAO.mensagem;
@@ -170,21 +170,60 @@ namespace Ajudai.Modelo
 
         public void PesquisarFuncionarioPorNome(List<String> dadosFuncionario)
         {
-            this.mensagem = "";
+           /* this.mensagem = "";
             Validacao validacao = new Validacao();
             validacao.ValidarPesquisaPorNome(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
-                Funcionario funcionario = new Funcionario();
-                funcionario.Nome = dadosFuncionario[3];
+                ddFuncionario funcionario = new ddFuncionario();
+                funcionario.nome = dadosFuncionario[3];
                 atbEstaticos.listaFuncionariosEstatico =
                     funcionarioDAO.PesquisarFuncionarioPorNome(funcionario);
             }
             else
             {
                 this.mensagem = validacao.mensagem;
+            }*/
+        }
+
+        public void CadastrarProduto(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            Validacao validacao = new Validacao();
+            validacao.ValidarCadastroProduto(dadosProduto);
+            if (validacao.mensagem.Equals(""))
+            {
+                Produto produto = new Produto();
+                produto.Nome = dadosProduto[1];
+                produto.Descricao = dadosProduto[2];
+                DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+                produtoDAO.CadastrarProduto(produto);
+                this.mensagem = produtoDAO.mensagem;
             }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
+        public Produto PesquisarProdutoPorId(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            Produto produto = new Produto();
+            Validacao validacao = new Validacao();
+            validacao.ValidarPesquisaProdutoPorId(dadosProduto);
+            if (validacao.mensagem.Equals(""))
+            {
+                produto.idProduto = validacao.id;
+                DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+                produto = produtoDAO.PesquisarProdutoPorId(produto);
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+            return produto;
         }
     }
 }
