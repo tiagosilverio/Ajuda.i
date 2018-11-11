@@ -17,17 +17,31 @@ namespace Ajudai.DAL
             this.mensagem = "";
             produtoEntity.Produto.Add(produto);
             produtoEntity.SaveChanges();
-            this.mensagem = "Cadastrado com sucesso";   
+            this.mensagem = "Cadastrado com sucesso";
         }
 
         public void EditarProduto(Produto produto)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            try
+            {
+                produtoEntity.Entry(produto).State = System.Data.Entity.EntityState.Modified;
+                produtoEntity.SaveChanges();
+                this.mensagem = "Editado com sucesso";
+            }
+            catch (EntryPointNotFoundException e)
+            {
+                this.mensagem = e.ToString();
+            }
         }
 
         public void ExcluirProduto(Produto produto)
         {
-            throw new NotImplementedException();
+            this.mensagem = "";
+            produto = produtoEntity.Produto.Find(produto.idProduto);
+            produtoEntity.Produto.Remove(produto);
+            produtoEntity.SaveChanges();
+            this.mensagem = "Excluído com sucesso";
         }
 
         public Produto PesquisarProdutoPorId(Produto produto)
@@ -41,8 +55,34 @@ namespace Ajudai.DAL
             {
                 this.mensagem = e.ToString();
                 return null;
-            }                       
-            //if (p == null) produto.idProduto = 0;            
+            }
+        }
+
+        public Produto PesquisarProdutoPorNome(Produto produto)
+        {
+            try
+            {
+                Produto p = produtoEntity.Produto.First(c => c.Nome == produto.Nome);
+                return p;
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.ToString();
+                return null;
+            }
+        }
+
+        public List<Produto> ListarProdutos()
+        {
+            try
+            {
+                return produtoEntity.Produto.ToList();
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.ToString();
+                return null;
+            }
         }
     }
 }

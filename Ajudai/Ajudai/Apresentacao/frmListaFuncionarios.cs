@@ -15,22 +15,29 @@ namespace Ajudai.Apresentacao
         public frmListaFuncionarios()
         {
             InitializeComponent();
-        }
+            ExibirFuncionarios();
+        }        
 
-        public void InicializarDataGrid()
+        private void ExibirFuncionarios()
         {
-            grdLista.DataSource = Modelo.atbEstaticos.listaFuncionariosEstatico;
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvFuncionarios.DataSource = controle.ListarFuncionarios();
+            dgvFuncionarios.Columns["Senha"].Visible = false;
+            dgvFuncionarios.Columns["Chamado"].Visible = false;
+            dgvFuncionarios.Columns["idFuncionario"].HeaderText = "Id";
+            dgvFuncionarios.Columns["FuncionarioLogin"].HeaderText = "Login";
+            dgvFuncionarios.Columns["NivelAcesso"].HeaderText = "Nível de Acesso";
+            dgvFuncionarios.Columns["NomeExibicao"].HeaderText = "Nome de Exibição";
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void grdLista_SelectionChanged(object sender, EventArgs e)
+        private void dgvFuncionarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           // Modelo.atbEstaticos.listaFuncionariosEstatico.Clear();
-            //Modelo.atbEstaticos.listaFuncionariosEstatico.Add((Modelo.Funcionario));
+            
         }
     }
 }

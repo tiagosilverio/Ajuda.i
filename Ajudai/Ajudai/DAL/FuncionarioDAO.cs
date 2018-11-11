@@ -16,13 +16,13 @@ namespace Ajudai.DAL
         public String mensagem;
         SqlDataReader dataReader;
         Conexao conexaoBD = new Conexao();
-        Modelo.AjudaiEntities funcionarioEntity = new Modelo.AjudaiEntities();
+        AjudaiEntities funcionarioEntity = new AjudaiEntities();
 
         public void CadastrarFuncionario(ddFuncionario funcionario)
         {
             this.mensagem = "";
             var hash = new Criptografia(SHA512.Create());
-            hash.GerarHash(funcionario.senha);        
+            hash.GerarHash(funcionario.senha);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"insert into Funcionario  
@@ -42,9 +42,9 @@ namespace Ajudai.DAL
                 cmd.Connection = conexaoBD.Conectar();
                 cmd.ExecuteNonQuery();
                 conexaoBD.Desconectar();
-                this.mensagem = "Cadastrado com Sucesso!";            
+                this.mensagem = "Cadastrado com Sucesso!";
             }
-            catch (SqlException e )
+            catch (SqlException e)
             {
                 this.mensagem = e.ToString();
                 this.mensagem = "Nome de Usuário Indisponível";
@@ -77,7 +77,7 @@ namespace Ajudai.DAL
                         if (funcionario.nivelAcesso == nivelA)
                         {
                             return acessoAdm = true;
-                        }                        
+                        }
                         if (funcionario.nivelAcesso == nivelT)
                         {
                             return acessoTec = true;
@@ -103,7 +103,7 @@ namespace Ajudai.DAL
                             NivelAcesso = @nivelAcesso, NomeExibicao = @nomeExibicao 
                             where idFuncionario = @id";
             cmd.Parameters.AddWithValue("@id", funcionario.id);
-            cmd.Parameters.AddWithValue("@usuario", funcionario.usuario);            
+            cmd.Parameters.AddWithValue("@usuario", funcionario.usuario);
             cmd.Parameters.AddWithValue("@nome", funcionario.nome);
             cmd.Parameters.AddWithValue("@email", funcionario.email);
             cmd.Parameters.AddWithValue("@telefone", funcionario.telefone);
@@ -158,7 +158,7 @@ namespace Ajudai.DAL
                 if (dataReader.HasRows)
                 {
                     dataReader.Read();
-                    funcionario.usuario = dataReader["FuncionarioLogin"].ToString();                    
+                    funcionario.usuario = dataReader["FuncionarioLogin"].ToString();
                     funcionario.nome = dataReader["Nome"].ToString();
                     funcionario.email = dataReader["Email"].ToString();
                     funcionario.telefone = dataReader["Telefone"].ToString();
@@ -217,39 +217,17 @@ namespace Ajudai.DAL
             return funcionario;
         }
 
-        public List<ddFuncionario> PesquisarFuncionarioPorNome(ddFuncionario funcionario)
+        public List<Funcionario> ListarFuncionarios()
         {
-           /* this.mensagem = "";
-            SqlCommand cmd = new SqlCommand();
-            List<Funcionario> listaFuncionarios = new List<Funcionario>();
-            cmd.CommandText = @"select * from Funcionario
-                            where Nome like @nome";
-            cmd.Parameters.AddWithValue("@nome", funcionario.nome + "%");
             try
             {
-                cmd.Connection = conexaoBD.Conectar();
-                dataReader = cmd.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    Funcionario listaUsuario = new Funcionario();
-                    listaUsuario.id = Convert.ToInt32(dataReader["idFuncionario"].ToString());
-                    listaUsuario.usuario = dataReader["FuncionarioLogin"].ToString();
-                    listaUsuario.nome = dataReader["Nome"].ToString();
-                    listaUsuario.email = dataReader["Email"].ToString();
-                    listaUsuario.telefone = dataReader["Telefone"].ToString();
-                    listaUsuario.celular = dataReader["Celular"].ToString();
-                    listaUsuario.nivelAcesso = dataReader["NivelAcesso"].ToString();
-                    listaUsuario.nomeExibicao = dataReader["NomeExibicao"].ToString();
-                    listaFuncionarios.Add(listaUsuario);
-                }
-                dataReader.Close();
-                conexaoBD.Desconectar();
+                return funcionarioEntity.Funcionario.ToList();
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 this.mensagem = e.ToString();
-            }*/
-            return null;
+                return null;
+            }
         }
     }
 }

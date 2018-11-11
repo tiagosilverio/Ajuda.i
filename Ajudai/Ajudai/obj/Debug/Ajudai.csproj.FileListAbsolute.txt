@@ -8,7 +8,6 @@ C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.GenerateResource.cache
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.CoreCompileInputs.cache
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.exe
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.pdb
-C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroUsuario.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioAdm.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmInicioTec.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaFuncionarios.resources
@@ -20,3 +19,7 @@ C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\bin\Debug\EntityFramework.SqlServer.xml
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.csproj.CopyComplete
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisarFuncionario.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisarProduto.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmDetalheChamado.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaProdutos.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroFuncionario.resources
+C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaClientes.resources

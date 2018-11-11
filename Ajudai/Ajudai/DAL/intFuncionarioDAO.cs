@@ -15,6 +15,6 @@ namespace Ajudai.DAL
         void ExcluirFuncionario(ddFuncionario funcionario);
         ddFuncionario PesquisarFuncionarioPorId(ddFuncionario funcionario);
         ddFuncionario PesquisarFuncionarioPorNomeUsuario(ddFuncionario funcionario);
-        List<ddFuncionario> PesquisarFuncionarioPorNome(ddFuncionario funcionario);
+        List<Funcionario> ListarFuncionarios();
     }
 }

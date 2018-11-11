@@ -78,11 +78,17 @@
     <Compile Include="Apresentacao\frmCadastroProduto.Designer.cs">
       <DependentUpon>frmCadastroProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Apresentacao\frmCadastroUsuario.cs">
+    <Compile Include="Apresentacao\frmCadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Apresentacao\frmCadastroUsuario.Designer.cs">
-      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    <Compile Include="Apresentacao\frmCadastroFuncionario.Designer.cs">
+      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\frmDetalheChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmDetalheChamado.Designer.cs">
+      <DependentUpon>frmDetalheChamado.cs</DependentUpon>
     </Compile>
     <Compile Include="Apresentacao\frmInicioTec.cs">
       <SubType>Form</SubType>
@@ -90,11 +96,23 @@
     <Compile Include="Apresentacao\frmInicioTec.Designer.cs">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmListaClientes.Designer.cs">
+      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmListaFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Apresentacao\frmListaFuncionarios.Designer.cs">
       <DependentUpon>frmListaFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\frmListaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmListaProdutos.Designer.cs">
+      <DependentUpon>frmListaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Apresentacao\frmLogin.cs">
       <SubType>Form</SubType>
@@ -120,8 +138,10 @@
     <Compile Include="Apresentacao\frmPesquisarProduto.Designer.cs">
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ChamadoDAO.cs" />
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
+    <Compile Include="DAL\intChamadoDAO.cs" />
     <Compile Include="DAL\intFuncionarioDAO.cs" />
     <Compile Include="DAL\intProdutoDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
@@ -162,8 +182,11 @@
     <EmbeddedResource Include="Apresentacao\frmCadastroProduto.resx">
       <DependentUpon>frmCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Apresentacao\frmCadastroUsuario.resx">
-      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Apresentacao\frmCadastroFuncionario.resx">
+      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmDetalheChamado.resx">
+      <DependentUpon>frmDetalheChamado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmInicioAdm.resx">
       <DependentUpon>frmInicioAdm.cs</DependentUpon>
@@ -171,8 +194,14 @@
     <EmbeddedResource Include="Apresentacao\frmInicioTec.resx">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmListaClientes.resx">
+      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmListaFuncionarios.resx">
       <DependentUpon>frmListaFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmListaProdutos.resx">
+      <DependentUpon>frmListaProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

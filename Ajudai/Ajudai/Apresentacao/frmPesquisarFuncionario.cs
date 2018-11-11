@@ -50,7 +50,7 @@ namespace Ajudai.Apresentacao
             if (result == DialogResult.Yes)
             {
                 controle.ExcluirFuncionario(dadosFuncionairio);
-                MessageBox.Show(controle.mensagem);
+                MessageBox.Show(controle.mensagem, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -110,44 +110,10 @@ namespace Ajudai.Apresentacao
             rdbTecnico.Checked = false;
         }
 
-        private void btnNome_Click(object sender, EventArgs e)
+        private void btnTodos_Click(object sender, EventArgs e)
         {
-            /*String[] dados = { "0", txbUsuario.Text, txbNome.Text, txbEmail.Text, mskTelefone.Text,
-                                    mskCelular.Text, txbNomeExibicao.Text };
-            List<String> dadosFuncionario = new List<String>(dados);
-            Modelo.Controle controle = new Modelo.Controle();
-            controle.PesquisarFuncionarioPorNome(dadosFuncionario);
-
-            if(Modelo.atbEstaticos.listaFuncionariosEstatico.Count == 1)
-            {
-                Modelo.ddFuncionario funcionario = Modelo.atbEstaticos.listaFuncionariosEstatico[0];
-                txbId.Text = funcionario.id.ToString();
-                txbUsuario.Text = funcionario.usuario;
-                txbNome.Text = funcionario.nome;
-                txbEmail.Text = funcionario.email;
-                mskTelefone.Text = funcionario.telefone;
-                mskCelular.Text = funcionario.celular;
-                txbNomeExibicao.Text = funcionario.nomeExibicao;
-                if (funcionario.nivelAcesso == "A")
-                    rdbAdministrador.Checked = true;
-                if (funcionario.nivelAcesso == "T")
-                    rdbTecnico.Checked = true;
-            }
-            if (Modelo.atbEstaticos.listaFuncionariosEstatico.Count > 1)
-            {
-                frmListaFuncionarios frmLista = new frmListaFuncionarios();
-                frmLista.ShowDialog();
-                txbId.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].ToString();
-                txbUsuario.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].usuario;
-                txbNome.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].nome;
-                txbEmail.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].email;
-                mskTelefone.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].telefone;
-                mskCelular.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].celular;
-                txbNomeExibicao.Text = Modelo.atbEstaticos.listaFuncionariosEstatico[0].nomeExibicao;
-                rdbAdministrador.Checked = false;
-                rdbTecnico.Checked = false;
-
-            }*/
+            frmListaFuncionarios listaFuncionarios = new frmListaFuncionarios();
+            listaFuncionarios.ShowDialog();
         }
     }
 }

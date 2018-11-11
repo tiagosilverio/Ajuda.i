@@ -107,7 +107,35 @@ namespace Ajudai.Modelo
 
         public void ValidarCadastroProduto(List<String> dadosProduto)
         {
+            if (string.IsNullOrEmpty(dadosProduto[1]))
+                mensagem = "Insira o nome do produto \n";
+            if (dadosProduto[1].Length > 50)
+                mensagem += "Nome deve contar até 50 caracteres \n";
+            if (string.IsNullOrEmpty(dadosProduto[2]))
+                mensagem += "Insira a descrição do produto \n";
+            if (dadosProduto[2].Length > 100)
+                mensagem += "Descrição deve contar até 50 caracteres \n";
+        }
+        
+        public void ValidarEdicaoProduto(List<String> dadosProduto)
+        {
+            if (string.IsNullOrEmpty(dadosProduto[1]))
+                mensagem = "Insira o nome do produto \n";
+            if (dadosProduto[1].Length > 50)
+                mensagem += "Nome deve contar até 50 caracteres \n";
+            if (string.IsNullOrEmpty(dadosProduto[2]))
+                mensagem += "Insira a descrição do produto \n";
+            if (dadosProduto[2].Length > 100)
+                mensagem += "Descrição deve contar até 50 caracteres \n";
 
+            try
+            {
+                id = Convert.ToInt32(dadosProduto[0]);
+            }
+            catch (FormatException)
+            {
+                mensagem += "ID inválido";
+            }
         }
 
         public void ValidarPesquisaProdutoPorId(List<String> dadosProduto)
@@ -121,6 +149,29 @@ namespace Ajudai.Modelo
             {
                 this.mensagem += "ID inválido";
             }
+        }
+
+        public void ValidarExclusaoProduto(List<String> dadosProduto)
+        {
+            if (string.IsNullOrEmpty(dadosProduto[1]))
+                mensagem = "Pesquise um produto cadastrado para excluir \n";            
+            if (string.IsNullOrEmpty(dadosProduto[2]))
+                mensagem = "Pesquise um produto cadastrado para excluir \n";           
+
+            try
+            {
+                id = Convert.ToInt32(dadosProduto[0]);
+            }
+            catch (FormatException)
+            {
+                mensagem += "Pesquise um produto cadastrado para excluir";
+            }
+        }
+
+        public void ValidarPesquisaProdutoPorNome(List<String> dadosProduto)
+        {
+            if (string.IsNullOrEmpty(dadosProduto[1]))
+                mensagem = "Insira o nome do produto \n";
         }
     }
 }

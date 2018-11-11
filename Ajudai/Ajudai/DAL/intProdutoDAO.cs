@@ -13,5 +13,7 @@ namespace Ajudai.DAL
         Produto PesquisarProdutoPorId(Produto produto);
         void EditarProduto(Produto produto);
         void ExcluirProduto(Produto produto);
+        Produto PesquisarProdutoPorNome(Produto produto);
+        List<Produto> ListarProdutos();
     }
 }

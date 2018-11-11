@@ -11,9 +11,9 @@ using Ajudai.Modelo;
 
 namespace Ajudai.Apresentacao
 {
-    public partial class frmCadastroUsuario : Form
+    public partial class frmCadastroFuncionario : Form
     {
-        public frmCadastroUsuario()
+        public frmCadastroFuncionario()
         {
             InitializeComponent();
         }      
@@ -30,7 +30,7 @@ namespace Ajudai.Apresentacao
             {
                 nivelAcesso = "T";
             }
-
+            
             List<String> dadosFuncionario = new List<String>();
             dadosFuncionario.Add("0");
             dadosFuncionario.Add(txbUsuario.Text);

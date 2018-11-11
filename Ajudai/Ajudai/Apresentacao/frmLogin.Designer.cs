@@ -39,53 +39,60 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(42, 147);
+            this.lblUsuario.Location = new System.Drawing.Point(29, 19);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuário";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(45, 164);
+            this.txbUsuario.Location = new System.Drawing.Point(32, 36);
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(234, 20);
             this.txbUsuario.TabIndex = 1;
+            this.txbUsuario.TextChanged += new System.EventHandler(this.txbUsuario_TextChanged);
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(45, 215);
+            this.txbSenha.Location = new System.Drawing.Point(32, 87);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(234, 20);
             this.txbSenha.TabIndex = 2;
+            this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(42, 198);
+            this.lblSenha.Location = new System.Drawing.Point(29, 70);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 0;
             this.lblSenha.Text = "Senha";
+            this.lblSenha.Click += new System.EventHandler(this.lblSenha_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdbLogTec);
             this.groupBox1.Controls.Add(this.rdbLogAdm);
-            this.groupBox1.Location = new System.Drawing.Point(45, 256);
+            this.groupBox1.Location = new System.Drawing.Point(32, 128);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(234, 63);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nível de Acesso";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rdbLogTec
             // 
@@ -123,7 +130,7 @@
             // btnEntrar
             // 
             this.btnEntrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEntrar.Location = new System.Drawing.Point(45, 353);
+            this.btnEntrar.Location = new System.Drawing.Point(45, 360);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(95, 23);
             this.btnEntrar.TabIndex = 6;
@@ -134,7 +141,7 @@
             // btnSair
             // 
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSair.Location = new System.Drawing.Point(184, 353);
+            this.btnSair.Location = new System.Drawing.Point(184, 360);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(95, 23);
             this.btnSair.TabIndex = 7;
@@ -150,23 +157,32 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.lblUsuario);
+            this.groupBox2.Controls.Add(this.txbUsuario);
+            this.groupBox2.Controls.Add(this.lblSenha);
+            this.groupBox2.Controls.Add(this.txbSenha);
+            this.groupBox2.Location = new System.Drawing.Point(13, 127);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(302, 208);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.CancelButton = this.btnSair;
             this.ClientSize = new System.Drawing.Size(327, 421);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txbSenha);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.txbUsuario);
-            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,6 +190,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,6 +210,7 @@
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

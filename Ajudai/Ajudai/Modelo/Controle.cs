@@ -187,6 +187,14 @@ namespace Ajudai.Modelo
             }*/
         }
 
+        public List<Funcionario> ListarFuncionarios()
+        {            
+            DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
+            List<Funcionario> lista = new List<Funcionario>();
+            lista = funcionarioDAO.ListarFuncionarios();
+            return lista;            
+        }
+
         public void CadastrarProduto(List<String> dadosProduto)
         {
             this.mensagem = "";
@@ -224,6 +232,97 @@ namespace Ajudai.Modelo
                 this.mensagem = validacao.mensagem;
             }
             return produto;
+        }
+
+        public void EditarProduto(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            Validacao validacao = new Validacao();
+            validacao.ValidarEdicaoProduto(dadosProduto);
+            if (validacao.mensagem.Equals(""))
+            {
+                Produto produto = new Produto();
+                produto.idProduto = validacao.id;
+                produto.Nome = dadosProduto[1];
+                produto.Descricao = dadosProduto[2];
+                DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+                produtoDAO.EditarProduto(produto);
+                this.mensagem = produtoDAO.mensagem;
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+
+        }
+
+        public void ExcluirProduto(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            Validacao validacao = new Validacao();
+            validacao.ValidarPesquisaProdutoPorId(dadosProduto);
+            if (validacao.mensagem.Equals(""))
+            {
+                Produto produto = new Produto();
+                produto.idProduto = validacao.id;
+                DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+                if (produtoDAO.PesquisarProdutoPorId(produto).Nome != null)
+                {
+                    produtoDAO.ExcluirProduto(produto);
+                    this.mensagem = produtoDAO.mensagem;
+                }
+                else
+                {
+                    this.mensagem = "Produto não encontrado";
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
+        public Produto PesquisarProdutoPorNome(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            Produto produto = new Produto();
+            Validacao validacao = new Validacao();
+            validacao.ValidarPesquisaProdutoPorNome(dadosProduto);
+            if (validacao.mensagem.Equals(""))
+            {                
+                produto.Nome = dadosProduto[1];
+                DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+                produto = produtoDAO.PesquisarProdutoPorNome(produto);
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+            return produto;
+        }
+
+        public List<Produto> ListarProdutos()
+        {           
+            DAL.ProdutoDAO produtoDAO = new DAL.ProdutoDAO();
+            List<Produto> lista = new List<Produto>();
+            lista = produtoDAO.ListarProdutos();
+            return lista;
+        }
+
+        public List<Chamado> ListarChamadosAbertos()
+        {            
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            List<Chamado> lista = new List<Chamado>();
+            lista = chamadoDAO.ListarChamadosAbertos();
+            return lista;
+        }
+
+        public List<Chamado> ListarChamadosConcluidos()
+        {
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            List<Chamado> lista = new List<Chamado>();
+            lista = chamadoDAO.ListarChamadosConcluidos();
+            return lista;
         }
     }
 }
