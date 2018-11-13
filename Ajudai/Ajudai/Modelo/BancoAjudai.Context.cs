@@ -13,10 +13,10 @@ namespace Ajudai.Modelo
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AjudaiEntities : DbContext
+    public partial class AJUDA_IEntities1 : DbContext
     {
-        public AjudaiEntities()
-            : base("name=AjudaiEntities")
+        public AJUDA_IEntities1()
+            : base("name=AJUDA_IEntities1")
         {
         }
     

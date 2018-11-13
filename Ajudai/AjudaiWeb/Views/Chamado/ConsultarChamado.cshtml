@@ -1,0 +1,103 @@
+﻿@model Ajudai.Modelo.ddChamado
+@{
+    ViewBag.Title = "Consultar Chamado";
+    Layout = "~/Views/Shared/_LayoutPageClient.cshtml";
+}
+<div class="row text-center">
+    <div class="col-md-12 pt-3 mb-3">
+        <h1 class="form-check h2 ">Consultar Chamado</h1>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-md-12 pb-2 mb-3">
+        <p class="lead">Consulte os detalhes do seu chamado abaixo.</p>
+    </div>
+</div>
+<div class="list-group-item-dark text-center" >   
+    <div class="col-md-12 pb-5">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <label>Produto</label><br />
+                @Model.Produto.nome - @Model.Produto.descricao
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <label>Data de Abertura</label><br />
+                @Model.dtAbertura
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <label>Descrição do chamado</label><br />
+                @Model.descricao
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <label>Status</label><br />
+                @if (Model.txStatus == "Aberto")
+                {
+                    <span class="text-danger">Em Aberto</span>
+                }
+                else
+                if (Model.txStatus == "Em atendimento")
+                {
+                    <span class="text-danger">Em Atendimento</span>
+                }
+                else
+                if (Model.txStatus == "Concluído")
+                {
+                    <span class="text-success">Concluído</span>
+                }
+            </div>
+        </div>
+        @{
+            //se o chamado foi finalizado
+            if (Model.txStatus == "Concluído")
+            {
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label>Posicionamento do funcionário</label><br />
+                        @Model.posicionamentoFuncionario
+                    </div>
+                </div>
+
+                //se o cliente já respondeu, exibe o comentário
+                if (!String.IsNullOrEmpty(Model.posicionamentoCliente))
+                {
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label>Posicionamento do cliente</label><br />
+                            @Model.posicionamentoCliente
+                        </div>
+                    </div>
+                }
+                //senão exibe o campo para responder
+                else
+                {
+                    using (Html.BeginForm("CadastrarPosicionamento", "Chamado", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(x => x.id)
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label>Posicionamento do cliente</label><br />
+                                @Html.TextAreaFor(x => x.posicionamentoCliente, new { @class = "form-control", rows = "5" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-2">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">Salvar</button>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        }
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <a href="~/Cliente" class="btn btn-outline-dark btn-lg px-5">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

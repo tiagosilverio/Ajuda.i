@@ -96,12 +96,6 @@
     <Compile Include="Apresentacao\frmInicioTec.Designer.cs">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
     </Compile>
-    <Compile Include="Apresentacao\frmListaClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Apresentacao\frmListaClientes.Designer.cs">
-      <DependentUpon>frmListaClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Apresentacao\frmListaFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +133,18 @@
       <DependentUpon>frmPesquisarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\ChamadoDAO.cs" />
+    <Compile Include="DAL\ClienteDAO.cs" />
     <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="Modelo\ddChamado.cs" />
+    <Compile Include="Modelo\ddCliente.cs" />
+    <Compile Include="Modelo\ddProduto.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
     <Compile Include="DAL\intChamadoDAO.cs" />
+    <Compile Include="DAL\intClienteDAO.cs" />
     <Compile Include="DAL\intFuncionarioDAO.cs" />
     <Compile Include="DAL\intProdutoDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
+    <Compile Include="Modelo\SessaoSistema.cs" />
     <Compile Include="Modelo\atbEstaticos.cs" />
     <Compile Include="Modelo\BancoAjudai.Context.cs">
       <AutoGen>True</AutoGen>
@@ -193,9 +193,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmInicioTec.resx">
       <DependentUpon>frmInicioTec.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Apresentacao\frmListaClientes.resx">
-      <DependentUpon>frmListaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmListaFuncionarios.resx">
       <DependentUpon>frmListaFuncionarios.cs</DependentUpon>
@@ -251,19 +248,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Modelo\BancoAjudai.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BancoAjudai.Context.cs</LastGenOutput>
       <DependentUpon>BancoAjudai.edmx</DependentUpon>
+      <LastGenOutput>BancoAjudai.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Modelo\BancoAjudai.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BancoAjudai.edmx</DependentUpon>
       <LastGenOutput>BancoAjudai.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

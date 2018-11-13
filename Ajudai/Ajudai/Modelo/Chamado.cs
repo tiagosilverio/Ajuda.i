@@ -20,14 +20,15 @@ namespace Ajudai.Modelo
         public Nullable<int> idFuncionario { get; set; }
         public Nullable<System.DateTime> dtAbertura { get; set; }
         public string Tipo { get; set; }
-        public string Descricao_PosicionamentoCliente { get; set; }
+        public string Descricao { get; set; }
         public string Prioridade { get; set; }
-        public Nullable<System.DateTime> dtAtendimento { get; set; }
+        public string dtAtendimento { get; set; }
         public string PosicionamentoFuncionario { get; set; }
         public string Status { get; set; }
-        public Nullable<System.DateTime> dtSolucao { get; set; }
+        public string dtSolucao { get; set; }
         public string Solucao { get; set; }
         public string Avaliacao { get; set; }
+        public string PosicionamentoCliente { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual Funcionario Funcionario { get; set; }

@@ -10,14 +10,15 @@
     <Property Name="idFuncionario" Type="int" />
     <Property Name="dtAbertura" Type="datetime" />
     <Property Name="Tipo" Type="varchar" MaxLength="50" />
-    <Property Name="Descricao_PosicionamentoCliente" Type="varchar" MaxLength="500" />
+    <Property Name="Descricao" Type="varchar" MaxLength="500" />
     <Property Name="Prioridade" Type="char" MaxLength="1" />
-    <Property Name="dtAtendimento" Type="datetime" />
+    <Property Name="dtAtendimento" Type="varchar" MaxLength="50" />
     <Property Name="PosicionamentoFuncionario" Type="varchar" MaxLength="500" />
     <Property Name="Status" Type="varchar" MaxLength="50" />
-    <Property Name="dtSolucao" Type="datetime" />
+    <Property Name="dtSolucao" Type="varchar" MaxLength="50" />
     <Property Name="Solucao" Type="varchar" MaxLength="255" />
     <Property Name="Avaliacao" Type="char" MaxLength="1" />
+    <Property Name="PosicionamentoCliente" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Cliente">
     <Key>

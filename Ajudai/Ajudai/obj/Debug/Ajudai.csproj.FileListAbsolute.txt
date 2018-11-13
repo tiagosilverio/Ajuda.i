@@ -22,4 +22,3 @@ C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmPesquisarProd
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmDetalheChamado.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaProdutos.resources
 C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmCadastroFuncionario.resources
-C:\PROJETOS\Ajuda.i\Ajudai\Ajudai\obj\Debug\Ajudai.Apresentacao.frmListaClientes.resources

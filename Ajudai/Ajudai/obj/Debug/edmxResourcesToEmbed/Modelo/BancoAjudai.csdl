@@ -10,14 +10,15 @@
     <Property Name="idFuncionario" Type="Int32" />
     <Property Name="dtAbertura" Type="DateTime" Precision="3" />
     <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Descricao_PosicionamentoCliente" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="Prioridade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="dtAtendimento" Type="DateTime" Precision="3" />
+    <Property Name="dtAtendimento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PosicionamentoFuncionario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="dtSolucao" Type="DateTime" Precision="3" />
+    <Property Name="dtSolucao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Solucao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Avaliacao" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PosicionamentoCliente" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Cliente" Relationship="Self.FK_Chamado_idCliente" FromRole="Chamado" ToRole="Cliente" />
     <NavigationProperty Name="Funcionario" Relationship="Self.FK_Chamado_idFuncionario" FromRole="Chamado" ToRole="Funcionario" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Chamado_idProduto" FromRole="Chamado" ToRole="Produto" />
@@ -99,7 +100,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="AjudaiEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="AJUDA_IEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Chamado" EntityType="Self.Chamado" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" />
     <EntitySet Name="Funcionario" EntityType="Self.Funcionario" />

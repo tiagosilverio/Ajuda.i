@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace Ajudai.DAL
     public class ProdutoDAO : intProdutoDAO
     {
         public String mensagem;
-        AjudaiEntities produtoEntity = new AjudaiEntities();
+        AJUDA_IEntities1 produtoEntity = new AJUDA_IEntities1();
+        SqlDataReader dataReader;
+        Conexao conexaoBD = new Conexao();
 
         public void CadastrarProduto(Produto produto)
         {
@@ -83,6 +86,34 @@ namespace Ajudai.DAL
                 this.mensagem = e.ToString();
                 return null;
             }
+        }
+
+        public List<ddProduto> ddListarProdutos()
+        {
+            SqlCommand cmd = new SqlCommand();
+            List<ddProduto> listaProdutos = new List<ddProduto>();
+            cmd.CommandText = @"select * from Produto";
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    ddProduto produto = new ddProduto();
+                    produto.id = Convert.ToInt32(dataReader["idProduto"].ToString());
+                    produto.nome = dataReader["nome"].ToString();
+                    produto.descricao = dataReader["descricao"].ToString();
+
+                    listaProdutos.Add(produto);
+                }
+                dataReader.Close();
+                conexaoBD.Desconectar();
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
+            return listaProdutos;
         }
     }
 }

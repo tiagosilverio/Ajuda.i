@@ -226,7 +226,7 @@
             // 
             this.lblCampos.AutoSize = true;
             this.lblCampos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCampos.Location = new System.Drawing.Point(219, 9);
+            this.lblCampos.Location = new System.Drawing.Point(176, 16);
             this.lblCampos.Name = "lblCampos";
             this.lblCampos.Size = new System.Drawing.Size(121, 13);
             this.lblCampos.TabIndex = 0;
@@ -279,6 +279,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.lblCampos);
             this.groupBox2.Controls.Add(this.txbSenha);
             this.groupBox2.Controls.Add(this.lblUsuario);
             this.groupBox2.Controls.Add(this.txbUsuario);
@@ -332,7 +333,6 @@
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(384, 496);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.lblCampos);
             this.Controls.Add(this.lblCamposObrigatorios);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);

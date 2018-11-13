@@ -9,7 +9,15 @@ namespace Ajudai.DAL
 {
     interface intChamadoDAO
     {
-        List<Chamado> ListarChamadosAbertos();
-        List<Chamado> ListarChamadosConcluidos();
+        void CadastrarChamado(ddChamado chamado);
+        ddChamado PesquisarChamadoPorId(int cdChamado);
+        void CadastrarPosicionamentoCliente(ddChamado chamado);
+        List<Chamado> ListarChamadosAbertosAdm();
+        List<Chamado> ListarChamadosAndamentoAdm();
+        List<Chamado> ListarChamadosConcluidosAdm();
+        List<Chamado> ListarChamadosAbertosTec();
+        List<Chamado> ListarChamadosAndamentoTec();
+        List<Chamado> ListarChamadosConcluidosTec();
+        void EditarChamado(Chamado chamado);
     }
 }

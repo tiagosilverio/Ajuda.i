@@ -24,17 +24,17 @@ namespace Ajudai.Apresentacao
             List<String> dadosFuncionario = new List<String>(dados);
             Modelo.Controle controle = new Modelo.Controle();
             Modelo.ddFuncionario funcionario = controle.PesquisarFuncionarioPorId(dadosFuncionario);
-            txbUsuario.Text = funcionario.usuario;
-            txbNome.Text = funcionario.nome;
-            txbEmail.Text = funcionario.email;
-            mskTelefone.Text = funcionario.telefone;
-            mskCelular.Text = funcionario.celular;
-            txbNomeExibicao.Text = funcionario.nomeExibicao;
-            if (funcionario.nivelAcesso == "A")
+            txbUsuario.Text = funcionario.Usuario;
+            txbNome.Text = funcionario.Nome;
+            txbEmail.Text = funcionario.Email;
+            mskTelefone.Text = funcionario.Telefone;
+            mskCelular.Text = funcionario.Celular;
+            txbNomeExibicao.Text = funcionario.NomeExibicao;
+            if (funcionario.NivelAcesso == "A")
                 rdbAdministrador.Checked = true;
-            if (funcionario.nivelAcesso == "T")
+            if (funcionario.NivelAcesso == "T")
                 rdbTecnico.Checked = true;
-            if (funcionario.id == 0)
+            if (funcionario.Id == 0)
                 MessageBox.Show("Dados não encontrados, verifique.", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
@@ -82,18 +82,18 @@ namespace Ajudai.Apresentacao
             List<String> dadosFuncionario = new List<String>(dados);
             Modelo.Controle controle = new Modelo.Controle();
             Modelo.ddFuncionario funcionario = controle.PesquisarFuncionarioPorNomeUsuario(dadosFuncionario);
-            txbId.Text = funcionario.id.ToString();
-            txbUsuario.Text = funcionario.usuario;
-            txbNome.Text = funcionario.nome;
-            txbEmail.Text = funcionario.email;
-            mskTelefone.Text = funcionario.telefone;
-            mskCelular.Text = funcionario.celular;
-            txbNomeExibicao.Text = funcionario.nomeExibicao;
-            if (funcionario.nivelAcesso == "A")
+            txbId.Text = funcionario.Id.ToString();
+            txbUsuario.Text = funcionario.Usuario;
+            txbNome.Text = funcionario.Nome;
+            txbEmail.Text = funcionario.Email;
+            mskTelefone.Text = funcionario.Telefone;
+            mskCelular.Text = funcionario.Celular;
+            txbNomeExibicao.Text = funcionario.NomeExibicao;
+            if (funcionario.NivelAcesso == "A")
                 rdbAdministrador.Checked = true;
-            if (funcionario.nivelAcesso == "T")
+            if (funcionario.NivelAcesso == "T")
                 rdbTecnico.Checked = true;
-            if (funcionario.usuario == null)
+            if (funcionario.Usuario == null)
                 MessageBox.Show("Usuário não encontrado", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);            
         }
 

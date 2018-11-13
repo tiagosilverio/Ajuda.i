@@ -1,0 +1,36 @@
+﻿@model Ajudai.Modelo.ddChamado
+@{
+    ViewBag.Title = "Abrir Chamado";
+    Layout = "~/Views/Shared/_LayoutPageClient.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 pt-3 mb-3">
+        <h1 class="form-check h2 ">Abrir Chamado</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 pb-2 mb-3">
+        <p class="lead">Descreva sua solicitação abaixo.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 pb-5">
+        @using (Html.BeginForm("AbrirChamado", "Chamado", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label>Produto</label>
+                    @Html.DropDownListFor(x => x.idProduto, ViewBag.ListarProdutos as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label>Descrição do chamado</label>
+                    @Html.TextAreaFor(x => x.descricao, new { @class = "form-control", rows = "8" })
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg px-5" type="submit">Salvar</button>
+        }
+    </div>
+</div>

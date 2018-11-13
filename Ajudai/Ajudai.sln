@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3374EE4A-913
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjudaiWeb", "AjudaiWeb\AjudaiWeb.csproj", "{EFB28C4A-CEBB-4721-8834-AD60C6F351D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{79D0F16A-1BEE-49CF-9667-C58789D9892D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{EDB3B69F-17D2-423E-A13E-A1C46B69C719} = {79D0F16A-1BEE-49CF-9667-C58789D9892D}
 		{EFB28C4A-CEBB-4721-8834-AD60C6F351D4} = {3374EE4A-913B-425F-A992-DF6B581D157B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

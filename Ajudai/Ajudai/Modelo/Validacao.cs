@@ -173,5 +173,17 @@ namespace Ajudai.Modelo
             if (string.IsNullOrEmpty(dadosProduto[1]))
                 mensagem = "Insira o nome do produto \n";
         }
+
+        public void ValidarEdicaoChamado(List<String> dadosChamado)
+        {
+            if (string.IsNullOrEmpty(dadosChamado[9]))
+                mensagem = "Insira seu posicionamento ao chamado \n";
+            if (string.IsNullOrEmpty(dadosChamado[5]))
+                mensagem += "Selecione o tipo do problema \n";
+            if (string.IsNullOrEmpty(dadosChamado[8]))
+                mensagem += "Selecione o status do chamado \n";
+            if (dadosChamado[8] == "Concluído" && string.IsNullOrEmpty(dadosChamado[11]))
+                mensagem += "Insira a solução para o chamado";
+        }
     }
 }

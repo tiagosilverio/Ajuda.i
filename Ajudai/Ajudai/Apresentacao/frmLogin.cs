@@ -43,8 +43,9 @@ namespace Ajudai
 
             if (controle.mensagem.Equals(""))
             {
+                //SessaoSistema.NomeUsuario = txbUsuario.Text;
                 if (controle.acessoAdmin) // Verifica se é administrador e acessa a tela de administrador.
-                {                   
+                {                    
                     frmInicioAdm inicioAdm = new frmInicioAdm();                    
                     inicioAdm.Show();
                     this.Hide();

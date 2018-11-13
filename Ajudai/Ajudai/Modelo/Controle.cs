@@ -22,15 +22,15 @@ namespace Ajudai.Modelo
             if (validacao.mensagem.Equals(""))
             {
                 ddFuncionario funcionario = new ddFuncionario();
-                funcionario.usuario = dadosFuncionario[1];
-                funcionario.senha = dadosFuncionario[2];
-                funcionario.confirmar = dadosFuncionario[3];
-                funcionario.nome = dadosFuncionario[4];
-                funcionario.email = dadosFuncionario[5];
-                funcionario.telefone = dadosFuncionario[6];
-                funcionario.celular = dadosFuncionario[7];
-                funcionario.nivelAcesso = dadosFuncionario[8];
-                funcionario.nomeExibicao = dadosFuncionario[9];
+                funcionario.Usuario = dadosFuncionario[1];
+                funcionario.Senha = dadosFuncionario[2];
+                funcionario.Confirmar = dadosFuncionario[3];
+                funcionario.Nome = dadosFuncionario[4];
+                funcionario.Email = dadosFuncionario[5];
+                funcionario.Telefone = dadosFuncionario[6];
+                funcionario.Celular = dadosFuncionario[7];
+                funcionario.NivelAcesso = dadosFuncionario[8];
+                funcionario.NomeExibicao = dadosFuncionario[9];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionarioDAO.CadastrarFuncionario(funcionario);
                 this.mensagem = funcionarioDAO.mensagem;               
@@ -50,9 +50,9 @@ namespace Ajudai.Modelo
             if (validacao.mensagem.Equals(""))
             {
                 ddFuncionario funcionario = new ddFuncionario();
-                funcionario.usuario = dadosLogin[1];
-                funcionario.senha = dadosLogin[2];
-                funcionario.nivelAcesso = dadosLogin[3];
+                funcionario.Usuario = dadosLogin[1];
+                funcionario.Senha = dadosLogin[2];
+                funcionario.NivelAcesso = dadosLogin[3];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 acessoAdmin = funcionarioDAO.Acessar(funcionario);
                 this.acessoAdmin = funcionarioDAO.acessoAdm;
@@ -68,7 +68,7 @@ namespace Ajudai.Modelo
                 {
                     acessoAdmin = false;
                     acesso = acessoTecn;
-                }
+                }                
             }
             else
             {
@@ -85,7 +85,7 @@ namespace Ajudai.Modelo
             validacao.ValidarPesquisaPorId(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
-                funcionario.id = validacao.id;
+                funcionario.Id = validacao.id;
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionario = funcionarioDAO.PesquisarFuncionarioPorId(funcionario);
             }
@@ -104,7 +104,7 @@ namespace Ajudai.Modelo
             validacao.ValidarPesquisaPorNomeUsuario(dadosFuncionario);
             if (validacao.mensagem.Equals(""))
             {
-                funcionario.usuario = dadosFuncionario[1];
+                funcionario.Usuario = dadosFuncionario[1];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionario = funcionarioDAO.PesquisarFuncionarioPorNomeUsuario(funcionario);                
             }
@@ -124,14 +124,14 @@ namespace Ajudai.Modelo
             if (validacao.mensagem.Equals(""))
             {
                 ddFuncionario funcionario = new ddFuncionario();
-                funcionario.id = validacao.id;
-                funcionario.usuario = dadosFuncionario[1];                
-                funcionario.nome = dadosFuncionario[2];
-                funcionario.email = dadosFuncionario[3];
-                funcionario.telefone = dadosFuncionario[4];
-                funcionario.celular = dadosFuncionario[5];
-                funcionario.nivelAcesso = dadosFuncionario[6];
-                funcionario.nomeExibicao = dadosFuncionario[7];
+                funcionario.Id = validacao.id;
+                funcionario.Usuario = dadosFuncionario[1];                
+                funcionario.Nome = dadosFuncionario[2];
+                funcionario.Email = dadosFuncionario[3];
+                funcionario.Telefone = dadosFuncionario[4];
+                funcionario.Celular = dadosFuncionario[5];
+                funcionario.NivelAcesso = dadosFuncionario[6];
+                funcionario.NomeExibicao = dadosFuncionario[7];
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
                 funcionarioDAO.EditarFuncionario(funcionario);
                 this.mensagem = funcionarioDAO.mensagem;
@@ -150,9 +150,9 @@ namespace Ajudai.Modelo
             if (validacao.mensagem.Equals(""))
             {
                 ddFuncionario funcionario = new ddFuncionario();
-                funcionario.id = validacao.id;
+                funcionario.Id = validacao.id;
                 DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
-                if (funcionarioDAO.PesquisarFuncionarioPorId(funcionario).usuario != null)
+                if (funcionarioDAO.PesquisarFuncionarioPorId(funcionario).Usuario != null)
                 {
                     funcionarioDAO.ExcluirFuncionario(funcionario);
                     this.mensagem = funcionarioDAO.mensagem;
@@ -166,26 +166,7 @@ namespace Ajudai.Modelo
             {
                 this.mensagem = validacao.mensagem;
             }
-        }
-
-        public void PesquisarFuncionarioPorNome(List<String> dadosFuncionario)
-        {
-           /* this.mensagem = "";
-            Validacao validacao = new Validacao();
-            validacao.ValidarPesquisaPorNome(dadosFuncionario);
-            if (validacao.mensagem.Equals(""))
-            {
-                DAL.FuncionarioDAO funcionarioDAO = new DAL.FuncionarioDAO();
-                ddFuncionario funcionario = new ddFuncionario();
-                funcionario.nome = dadosFuncionario[3];
-                atbEstaticos.listaFuncionariosEstatico =
-                    funcionarioDAO.PesquisarFuncionarioPorNome(funcionario);
-            }
-            else
-            {
-                this.mensagem = validacao.mensagem;
-            }*/
-        }
+        }        
 
         public List<Funcionario> ListarFuncionarios()
         {            
@@ -253,7 +234,6 @@ namespace Ajudai.Modelo
             {
                 this.mensagem = validacao.mensagem;
             }
-
         }
 
         public void ExcluirProduto(List<String> dadosProduto)
@@ -309,20 +289,93 @@ namespace Ajudai.Modelo
             return lista;
         }
 
-        public List<Chamado> ListarChamadosAbertos()
+        public List<Chamado> ListarChamadosAbertosAdm()
         {            
-            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
-            List<Chamado> lista = new List<Chamado>();
-            lista = chamadoDAO.ListarChamadosAbertos();
-            return lista;
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();            
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosAbertosAdm();
+            return atbEstaticos.listaChamadosEstatico;
         }
 
-        public List<Chamado> ListarChamadosConcluidos()
+        public List<Chamado> ListarChamadosAndamentoAdm()
         {
             DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
-            List<Chamado> lista = new List<Chamado>();
-            lista = chamadoDAO.ListarChamadosConcluidos();
-            return lista;
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosAndamentoAdm();            
+            return atbEstaticos.listaChamadosEstatico;
         }
+
+        public List<Chamado> ListarChamadosConcluidosAdm()
+        {
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosConcluidosAdm();
+            return atbEstaticos.listaChamadosEstatico;
+        }
+
+        public List<Chamado> ListarChamadosAbertosTec()
+        {
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosAbertosTec();
+            return atbEstaticos.listaChamadosEstatico;
+        }
+
+        public List<Chamado> ListarChamadosAndamentoTec()
+        {
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosAndamentoTec();
+            return atbEstaticos.listaChamadosEstatico;
+        }
+
+        public List<Chamado> ListarChamadosConcluidosTec()
+        {
+            DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+            atbEstaticos.listaChamadosEstatico = chamadoDAO.ListarChamadosConcluidosTec();
+            return atbEstaticos.listaChamadosEstatico;
+        }
+
+        public void EditarChamado(List<String> dadosChamado)
+        {
+            this.mensagem = "";            
+            Validacao validacao = new Validacao();
+            validacao.ValidarEdicaoChamado(dadosChamado);
+            if (validacao.mensagem.Equals(""))
+            {
+                Chamado chamado = new Chamado();
+                chamado.idChamado = Convert.ToInt32(dadosChamado[0]);
+                chamado.idCliente = Convert.ToInt32(dadosChamado[1]);
+                chamado.idProduto = Convert.ToInt32(dadosChamado[2]);
+                chamado.idFuncionario = Convert.ToInt32(dadosChamado[3]);
+                chamado.dtAbertura = Convert.ToDateTime(dadosChamado[4]);
+                chamado.Tipo = dadosChamado[5];
+                chamado.Descricao = dadosChamado[6];
+                chamado.Prioridade = dadosChamado[7];
+                chamado.Status = dadosChamado[8];
+                chamado.PosicionamentoFuncionario = dadosChamado[9];
+                chamado.dtAtendimento = dadosChamado[10];
+                if (chamado.Status.Equals("Aberto"))
+                {
+                    chamado.dtAtendimento = "";
+                }
+                if (chamado.Status.Equals("Em atendimento") 
+                    && !chamado.PosicionamentoFuncionario.Equals(""))
+                {
+                    chamado.dtAtendimento = Convert.ToString(DateTime.Now);
+                }                                          
+                chamado.Solucao = dadosChamado[11];
+                chamado.dtSolucao = dadosChamado[12];
+                if (chamado.Status.Equals("Concluído") && !chamado.Solucao.Equals(""))
+                {
+                    chamado.dtSolucao = Convert.ToString(DateTime.Now);
+                }
+                chamado.Avaliacao = dadosChamado[13];
+                chamado.PosicionamentoCliente = dadosChamado[14];
+                DAL.ChamadoDAO chamadoDAO = new DAL.ChamadoDAO();
+                chamadoDAO.EditarChamado(chamado);
+                this.mensagem = chamadoDAO.mensagem;
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+        
     }
 }
