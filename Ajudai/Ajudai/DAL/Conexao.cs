@@ -14,7 +14,7 @@ namespace Ajudai.DAL
         public Conexao()
         {
             conexaoBD = new SqlConnection();
-            conexaoBD.ConnectionString = @"Data Source=HUSTIAN\SQLEXPRESS;
+            conexaoBD.ConnectionString = @"Data Source=LAPTOP-CA2VTGB4\SQLEXPRESS;
                              Initial Catalog=AJUDA_I;Integrated Security=True";            
         }
 
