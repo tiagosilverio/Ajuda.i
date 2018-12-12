@@ -28,9 +28,10 @@
                 <div class="col-md-12 mb-3">
                     <label>Descrição do chamado</label>
                     @Html.TextAreaFor(x => x.descricao, new { @class = "form-control", rows = "8" })
+                    @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <button class="btn btn-primary btn-lg px-5" type="submit">Salvar</button>
+            <button class="btn btn-success btn-lg px-5" type="submit">Salvar</button>
         }
     </div>
 </div>

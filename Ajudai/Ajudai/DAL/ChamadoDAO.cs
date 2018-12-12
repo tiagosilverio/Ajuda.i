@@ -80,6 +80,7 @@ namespace Ajudai.DAL
                     chamado.txStatus = dataReader["Status"].ToString();
                     chamado.Produto.nome = dataReader["NomeProduto"].ToString();
                     chamado.Produto.descricao = dataReader["DescricaoProduto"].ToString();
+                    chamado.solucao = dataReader["Solucao"].ToString();
                 }
                 else
                 {

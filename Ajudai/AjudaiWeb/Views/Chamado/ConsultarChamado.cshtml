@@ -13,91 +13,90 @@
         <p class="lead">Consulte os detalhes do seu chamado abaixo.</p>
     </div>
 </div>
-<div class="list-group-item-dark text-center" >   
-    <div class="col-md-12 pb-5">
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label>Produto</label><br />
-                @Model.Produto.nome - @Model.Produto.descricao
-            </div>
+<form class="text-center bg-info mb-3">
+    <div class="form-row align-items-center">
+        <div class="col-md-4 mb-3">
+            <label>Produto</label><br />
+            @Model.Produto.nome - @Model.Produto.descricao
         </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label>Data de Abertura</label><br />
-                @Model.dtAbertura
-            </div>
-        </div>        
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label>Descrição do chamado</label><br />
-                @Model.descricao
-            </div>
+        <div class="col-md-4 mb-3">
+            <label>Data de Abertura</label><br />
+            @Model.dtAbertura
         </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label>Status</label><br />
-                @if (Model.txStatus == "Aberto")
-                {
-                    <span class="text-danger">Em Aberto</span>
-                }
-                else
-                if (Model.txStatus == "Em atendimento")
-                {
-                    <span class="text-danger">Em Atendimento</span>
-                }
-                else
-                if (Model.txStatus == "Concluído")
-                {
-                    <span class="text-success">Concluído</span>
-                }
-            </div>
-        </div>
-        @{
-            //se o chamado foi finalizado
+        <div class="col-md-4 mb-3">
+            <label>Status</label><br />
+            @if (Model.txStatus == "Aberto")
+            {
+                <span class="text-danger table-dark">Aberto</span>
+            }
+            else
+            if (Model.txStatus == "Em atendimento")
+            {
+                <span class="text-warning table-dark">Em Atendimento</span>
+            }
+            else
             if (Model.txStatus == "Concluído")
             {
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <label>Posicionamento do funcionário</label><br />
-                        @Model.posicionamentoFuncionario
-                    </div>
+                <span class="text-success table-dark">Concluído</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-row align-items-center">
+        <div class="col-md-4 mb-3">
+            <label>Descrição do chamado</label><br />
+            @Model.descricao
+        </div>
+
+        @{
+            if (Model.txStatus == "Em atendimento" || Model.txStatus == "Concluído")
+            {
+                <div class="col-md-4 mb-3">
+                    <label>Posicionamento do funcionário</label><br />
+                    @Model.posicionamentoFuncionario
                 </div>
 
-                //se o cliente já respondeu, exibe o comentário
-                if (!String.IsNullOrEmpty(Model.posicionamentoCliente))
-                {
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <label>Posicionamento do cliente</label><br />
-                            @Model.posicionamentoCliente
-                        </div>
-                    </div>
-                }
-                //senão exibe o campo para responder
-                else
-                {
-                    using (Html.BeginForm("CadastrarPosicionamento", "Chamado", FormMethod.Post))
-                    {
-                        @Html.HiddenFor(x => x.id)
-                        <div class="row">
-                            <div class="col-md-12 mb-3">
-                                <label>Posicionamento do cliente</label><br />
-                                @Html.TextAreaFor(x => x.posicionamentoCliente, new { @class = "form-control", rows = "5" })
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mt-2">
-                                <button type="submit" class="btn btn-primary btn-lg px-5">Salvar</button>
-                            </div>
-                        </div>
-                    }
-                }
+                <div class="col-md-4 mb-3">
+                    <label>Posicionamento do cliente</label><br />
+                    @Model.posicionamentoCliente
+                </div>
             }
         }
-        <div class="row">
-            <div class="col-md-12 mt-5">
-                <a href="~/Cliente" class="btn btn-outline-dark btn-lg px-5">Voltar</a>
+    </div>
+    @{
+        if (Model.txStatus == "Concluído")
+        {
+            <div class="form-row align-items-center">
+                <div class="col-md-4 mb-3">
+                    <label>Solução</label><br />
+                    @Model.solucao
+                </div>
             </div>
-        </div>
+        }
+    }
+</form>
+@{
+    if (Model.txStatus == "Em atendimento")
+    {
+        using (Html.BeginForm("CadastrarPosicionamento", "Chamado", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.id)
+            <div class="form">
+                <div class="col-md-12 mb-3">
+                    <label>Editar posicionamento</label><br />
+                    @Html.TextAreaFor(x => x.posicionamentoCliente, new { @class = "form-control", rows = "5" })
+                </div>
+                <div class="col-md-12 mt-2">
+                    <button type="submit" class="btn btn-success btn-sm px-5">Salvar</button>
+                </div>
+            </div>
+        }
+    }
+
+}
+
+<div class="form-row text-center">
+    <div class="col-md-12 mt-2">
+        <a href="~/Cliente" class="btn btn-outline-dark btn-sm px-5">Voltar</a>
     </div>
 </div>

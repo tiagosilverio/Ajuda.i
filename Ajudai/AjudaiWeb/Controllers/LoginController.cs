@@ -67,11 +67,17 @@ namespace AjudaiWeb.Controllers
         public ActionResult Cadastro(ddCliente dadosTela)
         {
             ClienteDAO cliente = new ClienteDAO();
-
-            cliente.CadastrarCliente(dadosTela);
-            TempData.Add("Mensagem-Sucesso", "cadastrado com sucesso");
-
-            return RedirectToAction("Cadastro");
+            if (ModelState.IsValid)
+            {
+                cliente.CadastrarCliente(dadosTela);
+                TempData.Add("Mensagem-Sucesso", "Cadastrado com sucesso!");
+                return RedirectToAction("Cadastro");
+            }
+            else
+            {
+                return View(dadosTela);
+            }
+            
         }
 
         //Sair

@@ -48,17 +48,17 @@
                     <td class="text-center">
                         @if (chamado.txStatus == "Aberto")
                         {
-                            <span class="text-danger">Aberto</span>
+                            <span class="text-danger table-dark">Aberto</span>
                         }
                         else
                         if (chamado.txStatus == "Em atendimento")
                         {
-                            <span class="text-danger">Em atendimento</span>
+                            <span class="text-warning table-dark">Em Atendimento</span>
                         }
                         else
                         if (chamado.txStatus == "Concluído")
                         {
-                            <span class="text-success">Concluído</span>
+                            <span class="text-success table-dark">Concluído</span>
                         }
                     </td>
                     <td class="text-center">

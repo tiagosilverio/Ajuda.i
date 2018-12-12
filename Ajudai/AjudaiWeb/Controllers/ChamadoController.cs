@@ -32,7 +32,7 @@ namespace AjudaiWeb.Controllers
         public ActionResult AbrirChamado(ddChamado dadosTela)
         {
             dadosTela.idCliente = Convert.ToInt32(Session["ssCodUsuario"]);
-            dadosTela.idFuncionario = 14;//código fixo do administrador, este receberá o chamado
+            dadosTela.idFuncionario = 1;//código fixo do administrador, este receberá o chamado
             dadosTela.txStatus = "Aberto";//status pendente
             chamado.CadastrarChamado(dadosTela);
 
