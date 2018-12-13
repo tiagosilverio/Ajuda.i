@@ -76,8 +76,7 @@ namespace AjudaiWeb.Controllers
             else
             {
                 return View(dadosTela);
-            }
-            
+            }            
         }
 
         //Sair

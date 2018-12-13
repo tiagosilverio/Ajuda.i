@@ -12,6 +12,7 @@ namespace Ajudai.DAL
         void CadastrarChamado(ddChamado chamado);
         ddChamado PesquisarChamadoPorId(int cdChamado);
         void CadastrarPosicionamentoCliente(ddChamado chamado);
+        void CadastrarAvaliacao(ddChamado chamado);
         List<Chamado> ListarChamadosAbertosAdm();
         List<Chamado> ListarChamadosAndamentoAdm();
         List<Chamado> ListarChamadosConcluidosAdm();

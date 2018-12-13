@@ -59,5 +59,15 @@ namespace AjudaiWeb.Controllers
             TempData.Add("Mensagem-Sucesso", "Posicionamento salvo com sucesso");
             return RedirectToAction("ConsultarChamado", new { cdChamado = dadosTela.id });
         }
+
+        //grava a avaliação
+        [HttpPost]
+        public ActionResult CadastrarAvaliacao(ddChamado dadosTela)
+        {
+            chamado.CadastrarAvaliacao(dadosTela);
+
+            TempData.Add("Mensagem-Sucesso", "Avaliado com sucesso");
+            return RedirectToAction("ConsultarChamado", new { cdChamado = dadosTela.id });
+        }
     }
 }

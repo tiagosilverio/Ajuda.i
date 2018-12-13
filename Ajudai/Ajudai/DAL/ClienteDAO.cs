@@ -95,7 +95,7 @@ namespace Ajudai.DAL
             List<ddChamado> listaChamados = new List<ddChamado>();
             cmd.CommandText = @"select c.*, p.Nome nomeProduto from Chamado c, Produto p
                              where p.idProduto = c.idProduto
-                             and c.idCliente = @idCliente";
+                             and c.idCliente = @idCliente order by idChamado desc";
 
             cmd.Parameters.AddWithValue("@idCliente", dadosTela.id);
 

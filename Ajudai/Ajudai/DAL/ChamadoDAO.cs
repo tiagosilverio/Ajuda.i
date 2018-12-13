@@ -81,6 +81,7 @@ namespace Ajudai.DAL
                     chamado.Produto.nome = dataReader["NomeProduto"].ToString();
                     chamado.Produto.descricao = dataReader["DescricaoProduto"].ToString();
                     chamado.solucao = dataReader["Solucao"].ToString();
+                    chamado.avaliacao = dataReader["Avaliacao"].ToString();
                 }
                 else
                 {
@@ -101,6 +102,25 @@ namespace Ajudai.DAL
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"update Chamado set PosicionamentoCliente = @posicionamento_cliente where idChamado = @id";
             cmd.Parameters.AddWithValue("@posicionamento_cliente", chamado.posicionamentoCliente);
+            cmd.Parameters.AddWithValue("@id", chamado.id);
+
+            try
+            {
+                cmd.Connection = conexaoBD.Conectar();
+                cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar();
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = e.ToString();
+            }
+        }
+
+        public void CadastrarAvaliacao(ddChamado chamado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"update Chamado set Avaliacao = @avaliacao where idChamado = @id";
+            cmd.Parameters.AddWithValue("@avaliacao", chamado.avaliacao);
             cmd.Parameters.AddWithValue("@id", chamado.id);
 
             try
